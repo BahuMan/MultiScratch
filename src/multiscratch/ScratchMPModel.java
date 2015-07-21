@@ -4,9 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.net.Inet4Address;
 import java.net.InetSocketAddress;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -43,7 +45,6 @@ public class ScratchMPModel {
 		webserver.createContext("/", new HttpAdapter());
 		webserver.setExecutor(new ThreadPoolExecutor(5, 5, 1, TimeUnit.HOURS, new LinkedBlockingQueue<Runnable>(10)));
         webserver.start();
-        log("webserver listening to " + webserver.getAddress().toString());
 
 		
 	}
@@ -74,6 +75,10 @@ public class ScratchMPModel {
 		if (l != this) {
 			eventListeners.add(l);
 			log("Added 1 listener\n");
+			try {
+				log("my local adress is " + Inet4Address.getLocalHost().getHostAddress());
+			}
+			catch (UnknownHostException uhe) {}
 		}
 	}
 	
