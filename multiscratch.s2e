@@ -1,0 +1,20 @@
+{
+    "extensionName": "BartMultiPlayer",
+    "extensionPort": 8000,
+    "host": "localhost",
+    "blockSpecs": [
+        [" ", "message %s is %s", "writemessage", "name", "text"],
+        ["r", "get message called %s", "readmessage", "name"],
+        ["r", "#messages", "nrmessages"]
+    ],
+    
+    "menus": {
+		"button": [ "up", "right", "down", "left", "A", "B", "-", "home", "+", "1", "2" ],
+		"rotation": [ "x", "y", "z" ],
+		"led": [ "1", "2", "3", "4" ],
+		"ir": [ "1", "2", "3", "4" ],
+		"xy": [ "x-position", "y-position"],
+		"controller": [ "1", "2", "3", "4" ],
+		"onOff": [ "on", "off" ]
+  }
+}
