@@ -140,6 +140,7 @@ public class ScratchMPModel {
 					String[] msg = line.split(" ");
 					if (msg.length != 2) log ("couldn't parse this: " + line);
 					messages.put(msg[0], msg[1]);
+					line = in.readLine();
 				}
 				//I might have parsed one line that isn't really a message, so I'm deleting that one again:
 				messages.remove("nrmessages");
